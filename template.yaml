@@ -17,10 +17,10 @@ spec:
   parameters:
     - title: Data Product One Pager
       required:
-        - identifier
+        # - identifier
         - domain
         - dataProductOwner
-        - devGroup
+        # - devGroup
         - email
         - name
         - dataProductType
