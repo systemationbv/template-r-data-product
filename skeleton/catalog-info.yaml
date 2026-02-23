@@ -1,0 +1,33 @@
+%SKELETON
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: ${{ values.parameters.identifier  }}
+  description: ${{ values.parameters.scopeDescription | dump }}
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: dataproduct
+  lifecycle: experimental
+  owner: ${{ values.parameters.dataProductOwner }}
+  domain: ${{ values.parameters.domain | dump }}
+  mesh:
+    dataProductOwner: ${{ values.parameters.dataProductOwner }}
+    devGroup: ${{ values.parameters.devGroup }}
+    email: ${{ values.parameters.email | dump }}
+    version: 0.0.0
+    fullyQualifiedName: ${{ values.parameters.domainName }} - ${{ values.parameters.name }}
+    name: ${{ values.parameters.name | dump }}
+    useCaseTemplateId: ${{ values.useCaseTemplateId | dump }}
+    infrastructureTemplateId: ${{ values.infrastructureTemplateId | dump }}
+    dataProductType: ${{ values.parameters.dataProductType | dump }}
+    componentsDescription: ${{ values.parameters.componentsDescription | dump }}
+    scopeDescription: ${{ values.parameters.scopeDescription | dump }}
+    characteristicsDescription: ${{ values.parameters.characteristicsDescription | dump }}
+    businessValue: ${{ values.parameters.businessValue | dump }}
+    useCases: ${{ values.parameters.useCases | dump }}
+    consumers: ${{ values.parameters.consumers | dump }}
+    potentialConsumers: ${{ values.parameters.potentialConsumers | dump }}
+    dependenciesRisks: ${{ values.parameters.dependenciesRisks | dump }}
+    systemOwner: ${{ values.parameters.systemOwner | dump }}
+    specific: {}

@@ -1,0 +1,197 @@
+# it is important to use this apiVersion
+apiVersion: witboost.com/v2
+kind: EditTemplate
+metadata:
+  name: r-edit-dataproduct-template
+  title: Edit R Data Product
+  description: Edit a R Data Product
+  tags:
+    - edit
+    - data-product
+spec:
+  owner: agile_lab
+  useCaseTemplateId:
+    - urn:dmb:utm:r-dataproduct-template:0.0.0
+  parameters:
+    - title: Update Data Product One Pager
+      description: |
+        This wizard will allow you to edit the metadata for a previously created Data Product.
+
+        Most metadata is editable but some (like the name, domain, etc) are not; their fields will be read-only.
+
+        Some of the files in the component's repository cannot be updated by this wizard, namely:
+        - **Documentation**: `README.md`, `docs/index.md`, etc
+        - **CI/CD**: `.gitlab-ci-yaml`
+        You need to take care of updating these yourself, as given their nature it's hard to do automatically and they are often edited manually after the component's creation.
+
+      required:
+        - email
+        - name
+      properties:
+        name:
+          title: Name
+          type: string
+          description: Not editable. The name of the Data Product.
+          ui:disabled: true
+        domainTypeRef:
+          title: domainTypeRef
+          type: string
+          default: domaintype:default/business-domain
+          ui:widget: hidden
+        domain:
+          title: Domain
+          type: string
+          description: Not editable. Domain of the Data Product.
+          ui:field: EntityPicker
+          ui:filter:
+            - fieldName: domainTypeRef
+              entityPath: relations.wb-instanceOf
+          ui:options:
+            allowArbitraryValues: false
+            allowedKinds:
+              - Domain
+          ui:disabled: true
+        devGroup:
+          title: Development Group
+          type: string
+          description: Not editable. Data Product development group. This will be the group of developers with access to the Data Product repositories.
+          ui:field: EntityPicker
+          ui:disabled: true
+          ui:options:
+            allowArbitraryValues: false
+            allowedKinds:
+              - Group
+        dataProductOwner:
+          title: Data Product Owner
+          type: string
+          description: Not editable. User who owns the Data Product.
+          ui:disabled: true
+          ui:field: EntityPicker
+          ui:options:
+            allowArbitraryValues: false
+            allowedKinds:
+              - User
+        email:
+          title: Contact email
+          type: string
+          format: email
+          description: Point of contact, it could be the owner or a distribution list, but must be reliable and responsive.
+
+        dataProductType:
+          title: Data Product Type
+          type: string
+          ui:disabled: true
+          enum:
+            - Source Aligned
+            - Consumer Aligned
+            - Domain Agnostic
+
+    - title: Update Data Product Concept
+      properties:
+        componentsDescription:
+          title: Which are the main Data Product components?
+          type: string
+          description: TODO
+          ui:options:
+            multiline: true
+            rows: 5
+        scopeDescription:
+          title: What is the scope of Data Product?
+          type: string
+          description: TODO
+          ui:options:
+            multiline: true
+            rows: 5
+        characteristicsDescription:
+          title: What new characteristics does this Data Product create?
+          type: string
+          description: |
+            ![](https://cdn.getyourguide.com/img/tour/01efe626863b8062c352c3038d512e8283d9eb888f895b3d64dd07dc6340bded.jpg/145.jpg)
+            [link](http://google.nl)
+          ui:options:
+            multiline: true
+            rows: 5
+    - title: Update Business Value
+      properties:
+        businessValue:
+          title: Which business value is this Data Product generating?
+          type: string
+          description: TODO
+          ui:options:
+            multiline: true
+            rows: 5
+        useCases:
+          title: Which use cases is it serving?
+          type: string
+          description: TODO
+          ui:options:
+            multiline: true
+            rows: 5
+    - title: Update Consumers
+      properties:
+        consumers:
+          title: Who are the current consumers?
+          description: Select all tribes that are currently consumers of your Data Product
+          ui:field: EntitySearchPicker
+          ui:options:
+            multiSelection: true
+            entities:
+              - type: Domain
+                displayName: Consumers Teams
+                displayField: "{{spec.mesh.name}}"
+                returnField: ref
+                userFilters:
+                  - search
+                filter:
+                  practiceShaper:
+                    kind: compatibleWithType
+                    compatibleWithType:
+                      - systemtype:default/dataproduct
+                columns:
+                  - name: name
+                    path: "{{metadata.name}}"
+                  - name: description
+                    value: description
+        potentialConsumers:
+          title: Who are (potential) target consumers?
+          description: Select all tribes that are currently consumers of your Data Product
+          ui:field: EntitySearchPicker
+          ui:options:
+            multiSelection: true
+            entities:
+              - type: Domain
+                displayName: Domain
+                displayField: "{{spec.mesh.name}}"
+                returnField: ref
+                userFilters:
+                  - search
+                filter:
+                  practiceShaper:
+                    kind: compatibleWithType
+                    compatibleWithType:
+                      - systemtype:default/dataproduct
+                columns:
+                  - name: name
+                    path: "{{metadata.name}}"
+                  - name: description
+                    value: description
+    - title: Update Dependencies
+      properties:
+        dependenciesRisks:
+          title: Dependencies Risks
+          description: |
+            Are there any dependencies and risk that we need to highlight?
+          type: array
+          items:
+            type: string
+    - title: Update Data Product Details
+      properties:
+        systemOwner:
+          title: System Owner
+          type: string
+          description: System Owner
+          ui:field: EntityPicker
+          ui:options:
+            allowArbitraryValues: false
+            allowedKinds:
+              - User
