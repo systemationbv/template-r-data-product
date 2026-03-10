@@ -60,7 +60,7 @@ spec:
           ui:options:
             allowArbitraryValues: false
             allowedKinds:
-              - Group
+              - User
         dataProductOwner:
           title: Data Product Owner
           type: string
