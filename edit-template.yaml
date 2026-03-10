@@ -51,16 +51,16 @@ spec:
             allowedKinds:
               - Domain
           ui:disabled: true
-        # devGroup:
-        #   title: Development Group
-        #   type: string
-        #   description: Not editable. Data Product development group. This will be the group of developers with access to the Data Product repositories.
-        #   ui:field: EntityPicker
-        #   ui:disabled: true
-        #   ui:options:
-        #     allowArbitraryValues: false
-        #     allowedKinds:
-        #       - Group
+        devGroup:
+          title: Development Group
+          type: string
+          description: Not editable. Data Product development group. This will be the group of developers with access to the Data Product repositories.
+          ui:field: EntityPicker
+          ui:disabled: true
+          ui:options:
+            allowArbitraryValues: false
+            allowedKinds:
+              - Group
         dataProductOwner:
           title: Data Product Owner
           type: string
