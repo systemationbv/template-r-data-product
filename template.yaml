@@ -70,11 +70,11 @@ spec:
           type: string
           description: Data Product development group. This will be the group of
             developers with access to the Data Product repositories
-          ui:field: EntityPicker
-          ui:options:
-            allowArbitraryValues: false
-            allowedKinds:
-              - Domain
+          # ui:field: EntityPicker
+          # ui:options:
+          #   allowArbitraryValues: false
+          #   allowedKinds:
+          #     - Domain
         dataProductOwner:
           title: Data Product Owner
           type: string
