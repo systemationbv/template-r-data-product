@@ -74,7 +74,7 @@ spec:
           ui:options:
             allowArbitraryValues: false
             allowedKinds:
-              - User
+              - Domain
         dataProductOwner:
           title: Data Product Owner
           type: string
