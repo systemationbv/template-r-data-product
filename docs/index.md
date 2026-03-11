@@ -94,26 +94,26 @@ After the final step the system will show you the summary of the template, and y
 
 _Example:_
 
-| Field name                                             | Example value                       |
-|:-------------------------------------------------------|:------------------------------------------------------|
-| Name                                                   | DPAT_QuarterlyData                                    |
-| Domain Type Ref                                        | domaintype:default/business-domain                    |
-| Domain                                                 | domain:finance                                        |
-| Domain Name                                            | Finance                                               |
-| Identifier                                             | finance.dpat_quarterlydata.0                          |
-| Development Group                                      | Rabobank development                                  |
-| Data Product Owner                                     | user:guest_developer                                  |
-| Contact Email                                          | witboost@rabobank.com                                 |
-| Data Product Type                                      | Source Aligned                                        |
-| Which Are The Main Data Product Components             | financial records                                     |
-| What Is The Scope Of Data Product                      | Business intelligence                                 |
-| What New Characteristics Does This Data Product Create | Not available                                         |
-| Which Business Value Is This Data Product Generating   | To be seen                                            |
-| Which Use Cases Is It Serving                          | Automatation of generation of quarterly documents     |
-| Who Are The Current Consumers                          | domain:marketing, domain:finance, domain:organization |
-| Who Are Potential Target Consumers                     | domain:marketing, domain:finance, domain:organization |
-| Dependencies Risks                                     | None                                                  |
-| System Owner                                           | user:guest_developer                                  |
+| Field name                                                 | Example value                       |
+|:-----------------------------------------------------------|:------------------------------------------------------|
+| **Name**                                                   | DPAT_QuarterlyData                                    |
+| **Domain Type Ref**                                        | domaintype:default/business-domain                    |
+| **Domain**                                                 | domain:finance                                        |
+| **Domain Name**                                            | Finance                                               |
+| **Identifier**                                             | finance.dpat_quarterlydata.0                          |
+| **Development Group**                                      | Rabobank development                                  |
+| **Data Product Owner**                                     | user:guest_developer                                  |
+| **Contact Email**                                          | witboost@rabobank.com                                 |
+| **Data Product Type**                                      | Source Aligned                                        |
+| **Which Are The Main Data Product Components**             | financial records                                     |
+| **What Is The Scope Of Data Product**                      | Business intelligence                                 |
+| **What New Characteristics Does This Data Product Create** | Not available                                         |
+| **Which Business Value Is This Data Product Generating**   | To be seen                                            |
+| **Which Use Cases Is It Serving**                          | Automatation of generation of quarterly documents     |
+| **Who Are The Current Consumers**                          | domain:marketing, domain:finance, domain:organization |
+| **Who Are Potential Target Consumers**                     | domain:marketing, domain:finance, domain:organization |
+| **Dependencies Risks**                                     | None                                                  |
+| **System Owner**                                           | user:guest_developer                                  |
 
 <br/>
 
