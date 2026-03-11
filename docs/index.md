@@ -1,11 +1,14 @@
-<img src="img\favicon.svg"  alt="Rabobank" width="50" height="50"/> 
+<img src="img\favicon.svg"  alt="Rabobank" width="50" height="50"/>
 
 # R Data Product
+
+<br/>
 
 ### Prerequisites
 
 A Domain should already exist in order to place the newly created Data Product into it.
 
+<br/>
 
 ### Component Basic Information
 
@@ -117,6 +120,7 @@ _Example:_
 
 <br/>
 
+#### Create
 After clicking on "Create" the registration of the Data product will start. If no errors occurred it will go through the 3 phases (Fetching, Publishing and Registering) and will give you the links to the newly created Repository and the data product page in the Builder.
 
 
