@@ -125,4 +125,4 @@ After clicking on "Create" the registration of the Data product will start. If n
 
 
 #### Users guide
-Click [here](https://github.com/systemationbv/template-r-data-product/tree/main/docs/docs/r-data-product-users-guide.pdf) for the graphical users guide
+Click [here](https://raw.githubusercontent.com/systemationbv/template-r-data-product/main/docs/docs/r-data-product-users-guide.pdf) for the graphical users guide
